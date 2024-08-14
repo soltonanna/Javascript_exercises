@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../style.css" />
+    <title>Array</title>
+</head>
+<body>
+    <main id="main" class="single-type">
+        <h1>Arrays !</h1>
+        <ul>
+            <li>JavaScript arrays are fundamental <i>data structures</i> that allow you to store and manipulate collections of data. Is used to store multiple values in a single variable.</li>
+
+            <li>Arrays are mutable, meaning you can change their elements.</li>
+
+            <li>It is a common practice to declare arrays with the const keyword;</li>
+
+            <li>Arrays in JavaScript are a special type of object. Although you can use arrays like objects with properties, arrays are optimized for ordered data, whereas objects are better for key-value pairs.</li>
+
+            <li>The typeof an array is <i>"object"</i>, which can be surprising. To check if a variable is an array, use <i>Array.isArray(variable)</i>.</li>
+
+            <li>Adding or removing elements from the beginning of an array using <i>shift()</i> or <i>unshift()</i> is generally slower than <i>pop()</i> or <i>push()</i> because it requires reindexing all the elements.</li>
+
+            <li>Many array methods <i>mutate</i> the original array (e.g., push, pop, splice), while others return <i>new</i> arrays (e.g., map, filter, slice). </li>
+
+            <li>Higher-order functions like <i>map()</i>, <i>filter()</i>, and <i>reduce()</i> are powerful tools for array manipulation and can lead to cleaner and more functional code.
+            </li>
+
+            <li>Arrays can contain objects, functions, other arrays, and mixed types. <br>
+            <code>
+                let complexArray = [1, {name: 'John'}, [2, 3], () => 'hello'];
+            </code></li>
+
+            <br><br>
+            <li><h3>Most important methods:</h3>
+                <ul class="sub-list">
+                    <li>
+                        <span>MAP</span>: 
+                        <p> * Return a new array. </p>
+                        <p> * Doesn't change the original array. </p>
+                        <p> * Calling a function for every array element. </p>
+                        <code>
+                            const ages = [12, 7, 54, 83, 11, 48]; <br>
+                            const doubleAge = ages.map((age) => age * 2); <br>
+                            console.log(doubleAge);
+                            <span class="console">// [24, 14, 108, 166, 22, 96]</span>                            
+                        </code>
+                    </li>
+                    <li>
+                        <span>FILTER</span>: 
+                        <p> * Return a new array. </p>
+                        <p> * Doesn't change the original array. </p>
+                        <p> * Filled with elements that pass a test provided by a function. </p>
+                        <code>
+                            const ages = [12, 7, 54, 83, 11, 48]; <br>
+                            const canDrink = ages.filter((age) => age > 21); <br>
+                            console.log(canDrink);
+                            <span class="console">// [54, 83, 48]</span>
+                        </code>
+                    </li>
+                    <li>
+                        <span>REDUCE</span>: 
+                        <p> * Returns a single value: the function's accumulated result. </p>
+                        <p> * Doesn't change the original array. </p>
+                        <code>
+                            const ages = [12, 7, 54, 83, 11, 48]; <br>
+                            const sumAges = ages.reduce((acc, value) => acc + value, 0); <br>
+                            console.log(sumAges);
+                            <span class="console">// 215</span>
+                        </code>
+                    </li>
+                    <li>
+                        <span>SORT</span>: 
+                        <p> * Overwrites the original array. </p>
+                        <p> * By default, sort() sorts elements as strings; This can lead to unexpected results when sorting numbers.</p> 
+                        <p> * To correctly sort numbers, you should provide a comparison function.</p>
+                        <code>
+                            const arr = [10, 5, 20]; <br>
+                            arr.sort((a, b) => a - b);  
+                            console.log(arr); 
+                            <span class="console">// [5, 10, 20]</span><br>
+                        </code>
+                    </li>
+                    <li>
+                        <span>FLAT</span>: 
+                        <p> * Return a new array. </p>
+                        <p> * Doesn't change the original array. </p>
+                        <p> * With the sub-array elements concatenated into it.</p>
+                        <code>
+                            const arr = [1, [2, [3, 4]]]; <br>
+                            const flatArr = arr.flat(2);  <br>
+                            console.log(flatArr);
+                            <span class="console">// [1, 2, 3, 4]</span>
+                        </code>
+                    </li>
+                    <li>
+                        <span>REVERSE</span>: 
+                        <p> * Overwrites the original array. </p>
+                        <code>
+                            const ages = [12, 7, 54, 83, 11, 48]; <br>
+                            console.log(ages.reverse()); 
+                            <span class="console">// [48, 11, 83, 54, 7, 12]</span>
+                        </code>
+                    </li>
+                    <li>
+                        <span>PUSH</span>: 
+                        <p> * Overwrites the original array. </p>
+                        <p> * Adds new items to the end of an array. </p>
+                        <p> * Changes the length of the array. </p>
+                        <p> * Returns the new length. </p>
+                        <code>
+                            const vegetables = ["tomato", "potato"]; <br>
+                            const newVeg = vegetables.push("pumpkin"); <br>
+                            console.log(vegetables);  
+                            <span class="console">// ["tomato", "potato", "pumpkin"] </span> <br>
+                            console.log(newVeg); 
+                            <span class="console">// 3 </span>
+                        </code>
+                    </li>
+                    <li>
+                        <span>POP</span>: 
+                        <p> * Overwrites the original array. </p>
+                        <p> * Removes (pops) the last element of an array. </p>
+                        <p> * Returns the removed element. </p>
+                        <code>
+                            const vegetables = ["tomato", "potato"]; <br>
+                            const newVeg = vegetables.pop(); <br>
+                            console.log(vegetables);  
+                            <span class="console">// ["tomato"] </span> <br>
+                            console.log(newVeg); 
+                            <span class="console">// "potato" </span>
+                        </code>
+                    </li>
+                    <li>
+                        <span>UNSHIFT</span>: 
+                        <p> * Overwrites the original array. </p>
+                        <p> * Adds new elements to the beginning of an array. </p>
+                        <p> * Returns the new length. </p>
+                        <code>
+                            const vegetables = ["tomato", "potato"]; <br>
+                            const newVeg = vegetables.unshift('pumpkin'); <br>
+                            console.log(vegetables);  
+                            <span class="console">// ["pumpkin", "tomato", "potato"] </span> <br>
+                            console.log(newVeg); 
+                            <span class="console">// 3 </span>
+                        </code>
+                    </li>
+                    <li>
+                        <span>SHIFT</span>: 
+                        <p> * Overwrites the original array. </p>
+                        <p> * Removes the first item of an array. </p>
+                        <p> * Returns the shifted element. </p>
+                        <code>
+                            const vegetables = ["tomato", "potato"]; <br>
+                            const newVeg = vegetables.shift(); <br>
+                            console.log(vegetables);  
+                            <span class="console">// ["potato"] </span> <br>
+                            console.log(newVeg); 
+                            <span class="console">// "tomato" </span>
+                        </code>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

@@ -13,7 +13,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;            
+    justify-content: center;
     border: 1px solid #acacac;
     box-shadow: 0 0 5px #008080;
     margin: 50px auto;
@@ -22,21 +22,39 @@ body {
     line-height: 25px;
     text-align: center;
 }
+#main.single-type {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
 
 #main h1 {
     margin: 20px 0;
 }
-#main p {
+#main p,
+#main li {
     font-size: 18px;
     margin-bottom: 15px;
     line-height: 22px;
 }
+
 #main a {
     color:#008080;
     text-decoration: none;
 }
+#main i {
+    color:#2210c0;
+}
 #main a:hover {
     color:#099654;
+}
+#main code {
+    background-color: #d5d5d561;
+    display: inline-block;
+    border-radius: 5px;
+    line-height: 27px;
+    margin: 8px 0 0;
+    padding: 7px;
 }
 #main p#help_info {
     font-size: 15px;
@@ -74,4 +92,27 @@ body {
 #root li span {
     color: #008080;
     font-style: italic;
+}
+.console {
+    font-weight: 400;
+    color:#099654;
+    margin-bottom: 0 !important;
+}
+
+#main .sub-list {
+    margin-left: 1rem;
+}
+#main .sub-list li {
+    border-bottom: 1px solid #dadada;
+    padding: 2rem 0;
+}
+#main .sub-list p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+#main .sub-list span {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: inline-block;
 }
