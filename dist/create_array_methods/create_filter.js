@@ -1,0 +1,1 @@
+let numbers=[5,4,7,31,48,65,87,102,184],filteredNumbers=numbers.filter(e=>e%2==0),filteredNumbers2=(console.log(numbers),console.log(filteredNumbers),Array.prototype.myFilter=function(r){var l=[];for(let e=0;e<this.length;e++)r(this[e],e,this)&&l.push(this[e]);return l},numbers.filter(e=>e%2!=0));console.log(numbers),console.log(filteredNumbers2);

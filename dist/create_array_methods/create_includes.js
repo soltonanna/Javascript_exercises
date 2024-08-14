@@ -1,0 +1,1 @@
+let numbers=[4,12,0,55,78,11,20,101,5,66,32];console.log(numbers.includes("a")),console.log(numbers.includes(20)),Array.prototype.myIncludes=function(n,l=0){for(let e=l;e<this.length;e++)if(this[e]===n)return!0;return!1},console.log(numbers.includes("b")),console.log(numbers.includes(5));

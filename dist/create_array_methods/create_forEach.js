@@ -1,0 +1,1 @@
+let names=["John","Nicolas","Tom"];names.forEach((o,a,c)=>{console.log({a:o,b:a,c:c})}),Array.prototype.myForEach=function(a){for(let o=0;o<this.length;o++)a(this[o],o,this)},names.myForEach((o,a,c)=>{console.log({a:o,b:a,c:c})});

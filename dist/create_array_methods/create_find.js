@@ -1,0 +1,1 @@
+let numbers=[4,12,0,55,78,11,20,101,5,66,32],checkedNumbers=numbers.find(e=>102<e),checkedNumbers2=(console.log(numbers),console.log(checkedNumbers),Array.prototype.myFind=function(s){for(let e=0;e<this.length;e++)if(s(this[e],e,this))return this[e]},numbers.find(e=>100<e));console.log(numbers),console.log(checkedNumbers2);

@@ -1,0 +1,1 @@
+let numbers=[4,12,0,55,78,11,20,101,5,66,32],checkedNumbers=numbers.some(e=>100<e),checkedNumbers2=(console.log(numbers),console.log(checkedNumbers),Array.prototype.mySome=function(o){for(let e=0;e<=this.length;e++)if(o(this[e],e,this))return!0;return!1},numbers.some(e=>5===e));console.log(numbers),console.log(checkedNumbers2);
