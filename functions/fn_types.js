@@ -1,0 +1,1 @@
+function square(r){return r*r}function map(e,n){var u=new Array(n.length);for(let r=0;r<n.length;r++)u[r]=e(n[r]);return u}console.log(" square == ",square(5));let f=function(r){return r*r*r},numbers=[0,1,2,5,10],cube=map(f,numbers),array=(console.log("cube == ",cube),["Hydrogen","Helium","Lithium","Beryllium"]),array2=array.map(r=>r.length);console.log(array2);
