@@ -4,7 +4,7 @@ const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 
 // Process all HTML files, including those in subfolders
-gulp.task('html', () => gulp.src('src/**/*.html').pipe(htmlmin({ collapseWhitespace: true })).pipe(gulp.dest('dist')));
+gulp.task('html', () => gulp.src('src/**/*.html').pipe(gulp.dest('dist')));
 
 // Process all CSS files, including those in subfolders
 gulp.task('css', () => gulp.src('src/**/*.css').pipe(cleanCSS()).pipe(gulp.dest('dist')));

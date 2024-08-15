@@ -1,1 +1,221 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link type="text/css" rel="stylesheet" href="../style.css"><title>Functions</title></head><body><main id="main" class="single-type"><h1>Functions !</h1><ul><li>A function in JavaScript is a block of reusable code that performs a specific task.</li><li>Functions allow you to organize your code into modular pieces, making it more readable, maintainable, and scalable.</li><li>When a piece of logic becomes too complex, break it down into smaller functions.</li><li>In web development, functions are commonly used to handle events, such as clicks, form submissions, or API responses.</li><li>Functions are essential in asynchronous programming for handling <i>callbacks</i>, <i>promises</i>, and <i>async/await</i> patterns.</li><li>A function should do one thing and do it well. This makes it easier to test and maintain.</li><br><br><li><h3>Core Function Types:</h3><h5>The actual core types of functions in JavaScript are</h5><ul class="sub-list"><li><span>Function Declaration:</span><p>* A function defined using the function keyword.</p><p>* Function declarations are <i>hoisted</i>, meaning they can be called before their definition in the code..</p><code>function greet(name) { return `Hello, ${name}!`; }</code></li><li><span>Function Expression:</span><p>* A function defined within an expression, often assigned to a variable.</p><p>* Function expressions are <i>not hoisted</i>, unlike function declarations.</p><code>const greet = function(name) { return `Hello, ${name}!`; };</code></li><li><span>Arrow Functions:</span><p>* A concise syntax for writing functions, introduced in ES6.</p><p>* Arrow functions do not have their own <i>'this'</i> context; they inherit this from the surrounding code.</p><code>const greet = (name) => `Hello, ${name}!`;</code></li><li><span>Constructor Function:</span><p>* Used with the <i>'new'</i> keyword to create objects.</p><code>function Person(name) { this.name = name; } const person = new Person('Anahit');</code></li></ul></li><br><br><li><h3>Function Patterns:</h3><h5>Specific ways of utilizing functions in JavaScript.</h5><ul class="sub-list"><li><span>Anonymous Functions:</span><p>* Functions without a name, often used in function expressions or as arguments.</p><p>* Anonymous functions can be useful for one-time tasks or callbacks.</p><code>setTimeout(function() { console.log('This is an anonymous function'); }, 1000);</code></li><li><span>Immediately Invoked Function Expression (IIFE):</span><p>* A function that is executed immediately after its creation.</p><p>* IIFEs are often used to create a local scope and avoid polluting the global namespace.</p><code>(function() { console.log('IIFE executed'); })();</code></li><li><span>Higher-Order Functions:</span><p>* Functions that take other functions as arguments or return functions as results.</p><p>* Higher-order functions enable functional programming concepts in JavaScript.</p><code>function higherOrder(func) { return function(name) { return func(name); }; }</code></li><li><span>Callback Functions:</span><p>* A function passed as an argument to another function and executed after some operation is completed.</p><p>* Callbacks are commonly used in asynchronous operations like API calls.</p><code>function fetchData(callback) { // Simulate data fetching setTimeout(() => { callback('Data received'); }, 2000); }</code></li><li><span>Pure Functions:</span><p>* Functions that return the same output for the same input and have no side effects.</p><p>* Pure functions are a key concept in functional programming, promoting predictability and testability.</p><code>function add(a, b) { return a + b; }</code></li><li><span>Recursion:</span><p>* A function that calls itself to solve a problem.</p><p>* Recursion is useful for tasks that can be divided into similar subtasks, like traversing trees or graphs.</p><code>function factorial(n) { if (n === 0) return 1; return n * factorial(n - 1); }</code></li><li><span>Closures:</span><p>* A function that retains access to its lexical scope, even when executed outside that scope.</p><p>* Closures are created when a function is defined within another function and allows for data encapsulation.</p><code>function outer() { const name = 'Anahit'; return function() { return `Hello, ${name}!`; }; } const greet = outer(); greet(); <span class="console">// "Hello, Anahit!"</span></code></li></ul></li><br><br><li><h3>Examples of Common Functions:</h3><ul class="sub-list"><li><span>Event Handler:</span><br><code>button.addEventListener('click', function() { alert('Button clicked!'); });</code></li><li><span>Asynchronous Function (Using Promises):</span><p>* A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation.</p><p>* It allows you to handle asynchronous operations by attaching <i>`.then()`</i>, <i>`.catch()`</i>, and <i>`.finally()`</i> methods to execute code when the operation is complete.</p><code>function fetchData(url) { return fetch(url) .then(response => response.json()) .then(data => console.log(data)) .catch(error => console.error('Error:', error)); }</code></li><li><span>Asynchronous Function (Using Async/Await):</span><p>* Async/Await is syntactic sugar over Promises that makes asynchronous code look and behave more like synchronous code.</p><p>* It provides a cleaner and more readable way to work with asynchronous operations.</p><code>async function fetchData(url) { try { const response = await fetch(url); const data = await response.json(); console.log(data); } catch (error) { console.error('Error:', error); } }</code></li></ul></li></ul></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../style.css" />
+    <title>Functions</title>
+</head>
+<body>
+    <main id="main" class="single-type">
+        <h1>Functions !</h1>
+        <ul>
+            <li>A function in JavaScript is a block of reusable code that performs a specific task.</li>
+            
+            <li>Functions allow you to organize your code into modular pieces, making it more readable, maintainable, and scalable.</li>
+            
+            <li>When a piece of logic becomes too complex, break it down into smaller functions.</li>
+
+            <li>In web development, functions are commonly used to handle events, such as clicks, form submissions, or API responses.</li>
+
+            <li>Functions are essential in asynchronous programming for handling <i>callbacks</i>, <i>promises</i>, and <i>async/await</i> patterns.</li>
+
+            <li>A function should do one thing and do it well. This makes it easier to test and maintain.</li>
+
+            <br><br>
+
+            <li>
+                <h3>Core Function Types:</h3>
+                <h5>The actual core types of functions in JavaScript are</h5>
+                <ul class="sub-list">
+                    <li>
+                        <span>Function Declaration:</span>
+                        <p> * A function defined using the function keyword.</p>
+                        <p> *  Function declarations are <i>hoisted</i>, meaning they can be called before their definition in the code..</p>
+                        <code>
+    function greet(name) {
+        return `Hello, ${name}!`;
+    }
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Function Expression:</span>
+                        <p> * A function defined within an expression, often assigned to a variable.</p>
+                        <p> * Function expressions are <i>not hoisted</i>, unlike function declarations.</p>
+                        <code>
+    const greet = function(name) {
+        return `Hello, ${name}!`;
+    };
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Arrow Functions:</span>
+                        <p> * A concise syntax for writing functions, introduced in ES6.</p>
+                        <p> * Arrow functions do not have their own <i>'this'</i> context; they inherit this from the surrounding code.</p>
+                        <code>
+    const greet = (name) => `Hello, ${name}!`;
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Constructor Function:</span>
+                        <p> * Used with the <i>'new'</i> keyword to create objects.</p>
+                        <code>
+    function Person(name) {
+        this.name = name;
+    }
+    const person = new Person('Anahit');
+                        </code>
+                    </li>
+                </ul>
+            </li>
+
+            <br><br>
+
+            <li>
+                <h3>Function Patterns:</h3>
+                <h5>Specific ways of utilizing functions in JavaScript.</h5>
+                <ul class="sub-list">
+                    <li>
+                        <span>Anonymous Functions:</span>
+                        <p> * Functions without a name, often used in function expressions or as arguments.</p>
+                        <p> * Anonymous functions can be useful for one-time tasks or callbacks.</p>
+                        <code>
+    setTimeout(function() {
+        console.log('This is an anonymous function');
+    }, 1000);
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Immediately Invoked Function Expression (IIFE):</span>
+                        <p> * A function that is executed immediately after its creation.</p>
+                        <p> * IIFEs are often used to create a local scope and avoid polluting the global namespace.</p>
+                        <code>
+    (function() {
+        console.log('IIFE executed');
+    })();
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Higher-Order Functions:</span>
+                        <p> * Functions that take other functions as arguments or return functions as results.</p>
+                        <p> * Higher-order functions enable functional programming concepts in JavaScript.</p>
+                        <code>
+    function higherOrder(func) {
+        return function(name) {
+            return func(name);
+        };
+    }    
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Callback Functions:</span>
+                        <p> * A function passed as an argument to another function and executed after some operation is completed.</p>
+                        <p> * Callbacks are commonly used in asynchronous operations like API calls.</p>
+                        <code>
+    function fetchData(callback) {
+        // Simulate data fetching
+        setTimeout(() => {
+            callback('Data received');
+        }, 2000);
+    }
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Pure Functions:</span>
+                        <p> * Functions that return the same output for the same input and have no side effects.</p>
+                        <p> * Pure functions are a key concept in functional programming, promoting predictability and testability.</p>
+                        <code>
+    function add(a, b) {
+        return a + b;
+    }                      
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Recursion:</span>
+                        <p> * A function that calls itself to solve a problem.</p>
+                        <p> * Recursion is useful for tasks that can be divided into similar subtasks, like traversing trees or graphs.</p>
+                        <code>
+    function factorial(n) {
+        if (n === 0) return 1;
+        return n * factorial(n - 1);
+    }
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Closures:</span>
+                        <p> * A function that retains access to its lexical scope, even when executed outside that scope.</p>
+                        <p> * Closures are created when a function is defined within another function and allows for data encapsulation.</p>
+                        <code>
+    function outer() {
+        const name = 'Anahit';
+        return function() {
+            return `Hello, ${name}!`;
+        };
+    }
+    const greet = outer();
+    greet(); 
+    <span class="console">// "Hello, Anahit!"</span>      
+                        </code>
+                    </li>
+                </ul>
+            </li>
+
+            <br><br>
+
+            <li>
+                <h3>Examples of Common Functions:</h3>
+                <ul class="sub-list">
+                    <li>
+                        <span>Event Handler:</span><br>
+                        <code>
+    button.addEventListener('click', function() {
+        alert('Button clicked!');
+    });
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Asynchronous Function (Using Promises):</span>
+                        <p> * A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation.</p>
+                        <p> * It allows you to handle asynchronous operations by attaching <i>`.then()`</i>, <i>`.catch()`</i>, and <i>`.finally()`</i> methods to execute code when the operation is complete.</p>
+                        <code>
+    function fetchData(url) {
+        return fetch(url)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+    }
+                        </code>
+                    </li>
+
+                    <li>
+                        <span>Asynchronous Function (Using Async/Await):</span>
+                        <p> * Async/Await is syntactic sugar over Promises that makes asynchronous code look and behave more like synchronous code. </p>
+                        <p> * It provides a cleaner and more readable way to work with asynchronous operations.</p>
+                        <code>
+    async function fetchData(url) {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+                        </code>
+                    </li>
+                </ul>    
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
