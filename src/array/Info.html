@@ -28,11 +28,13 @@
             </li>
 
             <li>Arrays can contain objects, functions, other arrays, and mixed types. <br>
-            <code>
-                let complexArray = [1, {name: 'John'}, [2, 3], () => 'hello'];
-            </code></li>
+                <code>
+    let complexArray = [1, {name: 'John'}, [2, 3], () => 'hello'];
+                </code>
+            </li>
 
             <br><br>
+            
             <li><h3>Most important methods:</h3>
                 <ul class="sub-list">
                     <li>
@@ -41,10 +43,10 @@
                         <p> * Doesn't change the original array. </p>
                         <p> * Calling a function for every array element. </p>
                         <code>
-                            const ages = [12, 7, 54, 83, 11, 48]; <br>
-                            const doubleAge = ages.map((age) => age * 2); <br>
-                            console.log(doubleAge);
-                            <span class="console">// [24, 14, 108, 166, 22, 96]</span>                            
+    const ages = [12, 7, 54, 83, 11, 48]; <br>
+    const doubleAge = ages.map((age) => age * 2); <br>
+    console.log(doubleAge);
+    <span class="console">// [24, 14, 108, 166, 22, 96]</span>                            
                         </code>
                     </li>
                     <li>
@@ -53,10 +55,10 @@
                         <p> * Doesn't change the original array. </p>
                         <p> * Filled with elements that pass a test provided by a function. </p>
                         <code>
-                            const ages = [12, 7, 54, 83, 11, 48]; <br>
-                            const canDrink = ages.filter((age) => age > 21); <br>
-                            console.log(canDrink);
-                            <span class="console">// [54, 83, 48]</span>
+    const ages = [12, 7, 54, 83, 11, 48]; <br>
+    const canDrink = ages.filter((age) => age > 21); <br>
+    console.log(canDrink);
+    <span class="console">// [54, 83, 48]</span>
                         </code>
                     </li>
                     <li>
@@ -64,10 +66,10 @@
                         <p> * Returns a single value: the function's accumulated result. </p>
                         <p> * Doesn't change the original array. </p>
                         <code>
-                            const ages = [12, 7, 54, 83, 11, 48]; <br>
-                            const sumAges = ages.reduce((acc, value) => acc + value, 0); <br>
-                            console.log(sumAges);
-                            <span class="console">// 215</span>
+    const ages = [12, 7, 54, 83, 11, 48]; <br>
+    const sumAges = ages.reduce((acc, value) => acc + value, 0); <br>
+    console.log(sumAges);
+    <span class="console">// 215</span>
                         </code>
                     </li>
                     <li>
@@ -76,10 +78,10 @@
                         <p> * By default, sort() sorts elements as strings; This can lead to unexpected results when sorting numbers.</p> 
                         <p> * To correctly sort numbers, you should provide a comparison function.</p>
                         <code>
-                            const arr = [10, 5, 20]; <br>
-                            arr.sort((a, b) => a - b);  
-                            console.log(arr); 
-                            <span class="console">// [5, 10, 20]</span><br>
+    const arr = [10, 5, 20]; <br>
+    arr.sort((a, b) => a - b);  
+    console.log(arr); 
+    <span class="console">// [5, 10, 20]</span><br>
                         </code>
                     </li>
                     <li>
@@ -88,19 +90,19 @@
                         <p> * Doesn't change the original array. </p>
                         <p> * With the sub-array elements concatenated into it.</p>
                         <code>
-                            const arr = [1, [2, [3, 4]]]; <br>
-                            const flatArr = arr.flat(2);  <br>
-                            console.log(flatArr);
-                            <span class="console">// [1, 2, 3, 4]</span>
+    const arr = [1, [2, [3, 4]]]; <br>
+    const flatArr = arr.flat(2);  <br>
+    console.log(flatArr);
+    <span class="console">// [1, 2, 3, 4]</span>
                         </code>
                     </li>
                     <li>
                         <span>REVERSE</span>: 
                         <p> * Overwrites the original array. </p>
                         <code>
-                            const ages = [12, 7, 54, 83, 11, 48]; <br>
-                            console.log(ages.reverse()); 
-                            <span class="console">// [48, 11, 83, 54, 7, 12]</span>
+    const ages = [12, 7, 54, 83, 11, 48]; <br>
+    console.log(ages.reverse()); 
+    <span class="console">// [48, 11, 83, 54, 7, 12]</span>
                         </code>
                     </li>
                     <li>
@@ -110,12 +112,12 @@
                         <p> * Changes the length of the array. </p>
                         <p> * Returns the new length. </p>
                         <code>
-                            const vegetables = ["tomato", "potato"]; <br>
-                            const newVeg = vegetables.push("pumpkin"); <br>
-                            console.log(vegetables);  
-                            <span class="console">// ["tomato", "potato", "pumpkin"] </span> <br>
-                            console.log(newVeg); 
-                            <span class="console">// 3 </span>
+    const vegetables = ["tomato", "potato"]; <br>
+    const newVeg = vegetables.push("pumpkin"); <br>
+    console.log(vegetables);  
+    <span class="console">// ["tomato", "potato", "pumpkin"] </span> <br>
+    console.log(newVeg); 
+    <span class="console">// 3 </span>
                         </code>
                     </li>
                     <li>
@@ -124,12 +126,12 @@
                         <p> * Removes (pops) the last element of an array. </p>
                         <p> * Returns the removed element. </p>
                         <code>
-                            const vegetables = ["tomato", "potato"]; <br>
-                            const newVeg = vegetables.pop(); <br>
-                            console.log(vegetables);  
-                            <span class="console">// ["tomato"] </span> <br>
-                            console.log(newVeg); 
-                            <span class="console">// "potato" </span>
+    const vegetables = ["tomato", "potato"]; <br>
+    const newVeg = vegetables.pop(); <br>
+    console.log(vegetables);  
+    <span class="console">// ["tomato"] </span> <br>
+    console.log(newVeg); 
+    <span class="console">// "potato" </span>
                         </code>
                     </li>
                     <li>
@@ -138,12 +140,12 @@
                         <p> * Adds new elements to the beginning of an array. </p>
                         <p> * Returns the new length. </p>
                         <code>
-                            const vegetables = ["tomato", "potato"]; <br>
-                            const newVeg = vegetables.unshift('pumpkin'); <br>
-                            console.log(vegetables);  
-                            <span class="console">// ["pumpkin", "tomato", "potato"] </span> <br>
-                            console.log(newVeg); 
-                            <span class="console">// 3 </span>
+    const vegetables = ["tomato", "potato"]; <br>
+    const newVeg = vegetables.unshift('pumpkin'); <br>
+    console.log(vegetables);  
+    <span class="console">// ["pumpkin", "tomato", "potato"] </span> <br>
+    console.log(newVeg); 
+    <span class="console">// 3 </span>
                         </code>
                     </li>
                     <li>
@@ -152,12 +154,12 @@
                         <p> * Removes the first item of an array. </p>
                         <p> * Returns the shifted element. </p>
                         <code>
-                            const vegetables = ["tomato", "potato"]; <br>
-                            const newVeg = vegetables.shift(); <br>
-                            console.log(vegetables);  
-                            <span class="console">// ["potato"] </span> <br>
-                            console.log(newVeg); 
-                            <span class="console">// "tomato" </span>
+    const vegetables = ["tomato", "potato"]; <br>
+    const newVeg = vegetables.shift(); <br>
+    console.log(vegetables);  
+    <span class="console">// ["potato"] </span> <br>
+    console.log(newVeg); 
+    <span class="console">// "tomato" </span>
                         </code>
                     </li>
                 </ul>

@@ -29,7 +29,13 @@ body {
 }
 
 #main h1 {
-    margin: 20px 0;
+    margin: 20px 0 50px;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+#main h5 {
+    text-decoration: underline;
 }
 #main p,
 #main li {
@@ -49,12 +55,19 @@ body {
     color:#099654;
 }
 #main code {
-    background-color: #d5d5d561;
-    display: inline-block;
-    border-radius: 5px;
-    line-height: 27px;
-    margin: 8px 0 0;
     padding: 7px;
+    margin: 8px 0;
+    white-space: pre;
+    line-height: 27px;
+    border-radius: 15px;
+    padding-right: 50px;
+    display: inline-block;
+    background-color: #d5d5d561;
+    box-shadow: 5px 5px 20px #dadada;
+    transition: box-shadow 0.2s ease-in-out;
+}
+#main code:hover {
+    box-shadow: 0px 0px 20px #dadada;
 }
 #main p#help_info {
     font-size: 15px;
@@ -102,7 +115,7 @@ body {
 #main .sub-list {
     margin-left: 1rem;
 }
-#main .sub-list li {
+#main .sub-list li:not(:last-of-type) {
     border-bottom: 1px solid #dadada;
     padding: 2rem 0;
 }
